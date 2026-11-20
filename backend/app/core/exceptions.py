@@ -1,0 +1,9 @@
+class AppError(Exception):
+    """Expected application error that maps to a structured JSON response."""
+
+    def __init__(self, status_code: int, code: str, message: str, details=None):
+        super().__init__(message)
+        self.status_code = status_code
+        self.code = code
+        self.message = message
+        self.details = details
